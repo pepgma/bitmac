@@ -1,66 +1,116 @@
-<!doctype html>
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
 <html>
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="chrome=1">
-    <title>Bitmac by pepgma</title>
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <title>YUI 3.x: CSS Grids Units Example</title>
+  <link rel="stylesheet" href="http://yui.yahooapis.com/3.10.0/build/cssreset/cssreset.css" type="text/css">
+  <link rel="stylesheet" href="http://yui.yahooapis.com/3.10.0/build/cssfonts/cssfonts.css" type="text/css">
+  <link rel="stylesheet" href="http://yui.yahooapis.com/3.10.0/build/cssgrids/cssgrids.css" type="text/css">
+  <script src="http://yui.yahooapis.com/3.10.0/build/yui/yui-min.js"></script>
+<style>
+div.yui3-g {
+  text-align:center;
+  vertical-align:middle;
+}
 
-    <link rel="stylesheet" href="stylesheets/styles.css">
-    <link rel="stylesheet" href="stylesheets/pygment_trac.css">
-    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
-    <!--[if lt IE 9]>
-    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-    <![endif]-->
-  </head>
-  <body>
-    <div class="wrapper">
-      <header>
-        <h1>Bitmac</h1>
-        <p></p>
+html,body {
+  margin-left: 10px; /* left gutter */
+  text-rendering: optimizeLegibility;
+  background: #222;
+  color:#fff;
+  font-family: calibri,verdana,arial,sans-serif;
+}
 
-        <p class="view"><a href="https://github.com/pepgma/bitmac">View the Project on GitHub <small>pepgma/bitmac</small></a></p>
+.content {
+  position: relative;
+  text-align: center;
+  margin: 15px 10px 15px 0; /*10px 10px 0 0; "column" gutters */
+  padding: 5px 2px;
+  z-index: 1;
+}
 
+.content p {
+  font-size: 190%;
+  //margin: 0 auto;
+  //background-color: #FFFCE7;
+  //padding: 1px 6px;
+  //font-weight: bold;
+  //z-index: 2;
+}
 
-        <ul>
-          <li><a href="https://github.com/pepgma/bitmac/zipball/master">Download <strong>ZIP File</strong></a></li>
-          <li><a href="https://github.com/pepgma/bitmac/tarball/master">Download <strong>TAR Ball</strong></a></li>
-          <li><a href="https://github.com/pepgma/bitmac">View On <strong>GitHub</strong></a></li>
-        </ul>
-      </header>
-      <section>
-        <h3>Welcome to GitHub Pages.</h3>
+h3 {
+  text-align: center;
+  font-size: 190%;
+  margin: 0.5em 0;
+}
+</style>
 
-<p>This automatic page generator is the easiest way to create beautiful pages for all of your projects. Author your page content here using GitHub Flavored Markdown, select a template crafted by a designer, and publish. After your page is generated, you can check out the new branch:</p>
+</head>
+<body class="yui3-skin-sam">
+<h3>Bigt Mac: miliBitcoin Burguer Index</h3>
+<div class="yui3-g">
+  <div class="yui3-u-1-3">
+    <div class="content"></div>
+  </div>
+  <div class="yui3-u-1-3">
+    <div class="content"><img src="big_mac_230.png"/><p id="bigmac"></p></div>
+  </div>
+  <div class="yui3-u-1-3">
+    <div class="content"></div>
+  </div>
+</div>
+<script type="text/javascript" charset="utf-8">
+//Based on:
+//http://christianheilmann.com/2009/12/09/building-a-research-interface-for-yahoo-bing-and-google-with-yql/
+//http://yuilibrary.com/yui/docs/cssgrids/cssgrids-units-example.html
+//http://www.economist.com/content/big-mac-index
+//http://www.mcdonalds.de/produkte/produkt-profil?productName=big_mac
+querier = function(){
 
-<pre><code>$ cd your_repo_root/repo_name
-$ git fetch origin
-$ git checkout gh-pages
-</code></pre>
-
-<p>If you're (NOT) using the GitHub for Mac, simply sync your repository and you'll see the new branch.</p>
-
-<h3>Designer Templates</h3>
-
-<p>We've crafted some handsome templates for you to use. Go ahead and continue to layouts to browse through them. You can easily go back to edit your page before publishing. After publishing your page, you can revisit the page generator and switch to another theme. Your Page content will be preserved if it remained markdown format.</p>
-
-<h3>Rather Drive Stick?</h3>
-
-<p>If you prefer to not use the automatic generator, push a branch named <code>gh-pages</code> to your repository to create a page manually. In addition to supporting regular HTML content, GitHub Pages support Jekyll, a simple, blog aware static site generator written by our own Tom Preston-Werner. Jekyll makes it easy to create site-wide headers and footers without having to copy them across every page. It also offers intelligent blog support and other advanced templating features.</p>
-
-<h3>Authors and Contributors</h3>
-
-<p>You can <a href="https://github.com/blog/821" class="user-mention">@mention</a> a GitHub username to generate a link to their profile. The resulting <code>&lt;a&gt;</code> element will link to the contributor's GitHub Profile. For example: In 2007, Chris Wanstrath (<a href="https://github.com/defunkt" class="user-mention">@defunkt</a>), PJ Hyett (<a href="https://github.com/pjhyett" class="user-mention">@pjhyett</a>), and Tom Preston-Werner (<a href="https://github.com/mojombo" class="user-mention">@mojombo</a>) founded GitHub.</p>
-
-<h3>Support or Contact</h3>
-
-<p>Having trouble with Pages? Check out the documentation at <a href="http://help.github.com/pages">http://help.github.com/pages</a> or contact <a href="mailto:support@github.com">support@github.com</a> and we’ll help you sort it out.</p>
-      </section>
-      <footer>
-        <p>This project is maintained by <a href="https://github.com/pepgma">pepgma</a></p>
-        <p><small>Hosted on GitHub Pages &mdash; Theme by <a href="https://github.com/orderedlist">orderedlist</a></small></p>
-      </footer>
-    </div>
-    <script src="javascripts/scale.fix.js"></script>
+  var bigmac = document.getElementById('bigmac');
+  
+  function seed(o){
     
-  </body>
+    console.log(o.query.results.item[0].title)
+    
+    if(o.query.results){
+      if(o.query.count == 13){
+        var r = o.query.results.item[0].title;
+        var s = r.split(': $');
+        var x = parseFloat(s[1]);
+        var p = 1000.0*4.11/x;      
+        bigmac.innerHTML = p.toFixed(2) + ' m฿';
+      } else {
+        bigmac.innerHTML = 'Wrong rates format';
+      }
+    } else {
+      bigmac.innerHTML = 'No rates found';
+    };
+  }
+  
+  function doSearch(){
+    var url = 'select title from rss where url="http://feeds.feedburner.com/OuncemeQuotesFullFeed?format=xml"'
+    var api = 'http://query.yahooapis.com/v1/public/yql?q='+
+              encodeURIComponent(url)+'&format=json&callback=querier.se';
+    
+    var s = document.createElement('script');
+    s.setAttribute('src',api);
+    document.getElementsByTagName('head')[0].appendChild(s);
+  }
+  
+  //document.getElementById('mainform').onsubmit = function(){
+  //  doSearch();
+  //  return false;
+  //}
+  
+  return {
+    se:seed,
+    ds:doSearch
+  }
+  
+}();
+q = querier;
+q.ds();
+</script>
+</body>
 </html>
