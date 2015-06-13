@@ -1,4 +1,194 @@
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
-<html></head>
-<body>Hello world!</body>
+<html>
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <title>Bitmac: price of everyday items in Bitcoin</title>
+  <link rel="stylesheet" href="http://yui.yahooapis.com/3.10.0/build/cssreset/cssreset.css" type="text/css">
+  <link rel="stylesheet" href="http://yui.yahooapis.com/3.10.0/build/cssfonts/cssfonts.css" type="text/css">
+  <link rel="stylesheet" href="http://yui.yahooapis.com/3.10.0/build/cssgrids/cssgrids.css" type="text/css">
+  <script src="http://yui.yahooapis.com/3.10.0/build/yui/yui-min.js"></script>
+<style>
+div.yui3-g {
+  text-align:center;
+  vertical-align:middle;
+}
+
+html,body {
+  margin-left: 10px; /* left gutter */
+  text-rendering: optimizeLegibility;
+  background: #fff;
+  color: #222;
+  font-family: calibri,verdana,arial,sans-serif;
+}
+
+.content {
+  position: relative;
+  margin: 15px 10px 15px 0; /*10px 10px 0 0; "column" gutters */
+  padding: 5px 2px;
+  z-index: 1;
+}
+
+.content p {
+  font-size: 60%;
+  //margin: 0 auto;
+  //background-color: #FFFCE7;
+  //padding: 1px 6px;
+  //z-index: 2;
+  font-family: "Times New Roman", Times, serif;
+  font-style: italic;
+  color:#555;
+}
+
+.content sup {
+  font-size: 40%;
+  font-family: "Times New Roman", Times, serif;
+  font-style: italic;
+  color:#555;
+}
+
+h1 {
+  text-align: center;
+  font-size: 220%;
+  margin: 0.5em 0;
+}
+
+h2 {
+  text-align: center;
+  font-size: 100%;
+  font-style: italic;
+  margin: 0.5em 0;
+  color:#555;
+  font-family: "Times New Roman", Times, serif;
+}
+
+h3 {
+  text-align: center;
+  font-size: 220%;
+  margin: 0.5em 0;
+}
+
+h4 {
+  text-align: center;
+  font-size: 160%;
+}
+
+</style>
+
+</head>
+<body class="yui3-skin-sam">
+<h1>bitmac</h1>
+<h2>The price of everyday items in Bitcoin <span id="btc"></span><sup>1</sup></h2>
+<h3 id="mbtc">1 m&#3647; = loading prices ...</h3>
+<div class="yui3-g">
+  <div class="yui3-u-1-3">
+    <div class="content"></div>
+  </div>
+  <div class="yui3-u-1-3">
+    <div class="content"><img src="images/bigmac.png" title="http://www.mcdonalds.de/produkte/produkt-profil?productName=big_mac"/><h4>1 Big Mac&reg; <span id="burger"></span><sup>2</sup></h4></div>
+  </div>
+  <div class="yui3-u-1-3">
+    <div class="content"></div>
+  </div>
+  <div class="yui3-u-1-3">
+    <div class="content"><img src="images/bananas.png" title="By 24oranges.nl (CC BY-SA 2.0) http://www.flickr.com/photos/24oranges/6612824761/"/><h4>1kg Bananas <span id="bananas"></span><sup>2</sup></h4></div>
+  </div>
+  <div class="yui3-u-1-3">
+    <div class="content"><img src="images/milk.png" title="By Nick Piggott (CC BY 2.0) http://www.flickr.com/photos/nickpiggott/513371114/"/><h4>1lt of Milk <span id="milk"></span><sup>2</sup></h4></div>
+  </div>
+  <div class="yui3-u-1-3">
+    <div class="content"><img src="images/bread.png" title="By Roger Ferrer (CC BY-NC-SA 2.0) http://www.flickr.com/photos/rofi/2521607173/"/><h4>1x Bread <span id="bread"></span><sup>2</sup></h4></div>
+  </div>
+  <div class="yui3-u-1-3">
+    <div class="content"><img src="images/iphone.png" title="From iPhone product images"/><h4>iPhone 4 16GB <span id="bread"></span><sup>2</sup></h4></div>
+  </div>
+  <div class="yui3-u-1-3">
+    <div class="content"><img src="images/tee.png" title="Sell by Full Tilt http://www.amazon.com/dp/B00DP34AVO/ref=cm_sw_r_tw_dp_iDdRsb1XY0VFX93N"/><h4>Women's Pocket Tee $7.48<span id="bread"></span><sup>2</sup></h4></div>
+  </div>
+  <div class="yui3-u-1-3">
+    <div class="content"><img src="images/xbox.png" title=""/><h4>Xbox One $499.99 <span id="bread"></span><sup>2</sup></h4></div>
+  </div>
+  <div class="yui3-u-1-3">
+    <div class="content"><img src="images/sriracha.png" title="http://www.amazon.com/dp/B001E5DZZM/ref=cm_sw_r_tw_dp_ZYbRsb1H8NQ9JR7V"/><h4>28 Oz Sriracha Hot Sauce <span id="bread"></span><sup>2</sup></h4></div>
+  </div>
+  <div class="yui3-u-1-3">
+    <div class="content"><img src="images/pizza.png" title="Domino's Pepperoni Passion http://www.dominos.uk.com/media_centre/pictures.aspx "/><h4>1 Domino's Medium Pepperoni €8,09<span id="bread"></span><sup>2</sup></h4></div>
+  </div>
+  <div class="yui3-u-1-3">
+    <div class="content"><img src="images/jerky.png" title="By BeefJerky.com http://www.beefjerky.com/images/ProductPics/FFJ.jpg"/><h4>Black Pepper Beef Jerky <span id="bread"></span><sup>2</sup></h4></div>
+  </div>
+  <div class="yui3-u-1-3">
+    <div class="content"></div>
+  </div>
+  <div class="yui3-u-1-3">
+    <div class="content"></div>
+  </div>
+  <div class="yui3-u-1-3">
+    <div class="content">
+    <p>Sources:</p>
+    <p>1. http://data.mtgox.com</p>
+    <p>2. At $4.11, average http://www.economist.com/content/big-mac-index</p>
+    http://www.dominos.de/menu/pizza/default.aspx
+    http://pizzaforcoins.com/dominos-pizza-for-bitcoins.html
+    http://bitmunchies.com/index.php?main_page=product_info&cPath=202_206&products_id=31123
+    </div>
+  </div>
+</div>
+<script type="text/javascript" charset="utf-8">
+//Based on:
+//http://christianheilmann.com/2009/12/09/building-a-research-interface-for-yahoo-bing-and-google-with-yql/
+//http://yuilibrary.com/yui/docs/cssgrids/cssgrids-units-example.html
+//http://www.mcdonalds.de/produkte/produkt-profil?productName=big_mac
+querier = function(){
+
+  var ebtc = document.getElementById('btc');
+  var embtc = document.getElementById('mbtc');
+  var eburger = document.getElementById('burger');
+  
+  function _seed(o){
+    
+    console.log(o.query.results)
+    
+    if(o.query.results){
+      if(o.query.count == 1){
+        var s = o.query.results.value;
+        var btc = parseFloat(s);
+        var mbtc = btc/1000.0;
+        ebtc.innerHTML = '(1 BTC = ' + btc.toFixed(2) + ' USD)';
+        embtc.innerHTML = '1 m&#3647; = ' + mbtc.toFixed(2) + ' USD';
+        var p = 4.11/mbtc;
+        eburger.innerHTML = p.toFixed(2) + ' m&#3647;';
+        
+      } else {
+        eburger.innerHTML = 'Wrong rates format';
+      }
+    } else {
+      eburger.innerHTML = 'No rates found';
+    };
+  }
+  
+  function doSearch(){
+    var qry = 'select * from json where url="http://data.mtgox.com/api/2/BTCUSD/money/ticker" and itemPath="json.data.avg.value"'
+    var api = 'http://query.yahooapis.com/v1/public/yql?q='+
+              encodeURIComponent(qry)+'&format=json&callback=querier.seed';
+              
+    var s = document.createElement('script');
+    s.setAttribute('src',api);
+    document.getElementsByTagName('head')[0].appendChild(s);
+  }
+  
+  //document.getElementById('mainform').onsubmit = function(){
+  //  doSearch();
+  //  return false;
+  //}
+  
+  return {
+    seed:_seed,
+    ds:doSearch
+  }
+  
+}();
+q = querier;
+q.ds();
+</script>
+</body>
 </html>
